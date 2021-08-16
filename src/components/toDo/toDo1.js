@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import ToDoItem from "./toDoItem";
+import ToDoItem1 from "./toDoItem1";
 
 
 const getLocalData = () => {
@@ -18,7 +18,7 @@ const getLocalData = () => {
   }
 }
 
-const ToDo = () => {
+const ToDo1 = () => {
 
   const [toDoItems, setToDoItems] = useState(null)
   const [item, setItem] = useState(null)
@@ -89,11 +89,7 @@ const ToDo = () => {
 
       <div className="container row mx-auto d-flex justify-content-center align-items-center mt-4 jumbotron">
 
-        <div className="col-6 ">
-
-          <input type="text" value={item} onChange={(e) => { setItem(e.target.value) }} className="form-control" />
-          <button className="btn btn-success mt-2" onClick={addNewToDoItem}>Add New Item</button>
-        </div>
+        
         <div className="col-4">
 
           <h3>ToDo List</h3>
@@ -106,7 +102,7 @@ const ToDo = () => {
                 <>
 
 
-                  <ToDoItem toDoItems={curElem} key={curElem.id} handleDeleteToDoItem={handleDeleteToDoItem} />
+                  <ToDoItem1 toDoItems={curElem} key={curElem.id} handleDeleteToDoItem={handleDeleteToDoItem} />
                   {/* <input type="checkbox" checked={curElem.isDone} />
                           <span>{curElem.task}</span> */}
                 </>
@@ -123,5 +119,5 @@ const ToDo = () => {
   )
 }
 
-export default ToDo
+export default ToDo1
 

@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import ToDo from "./components/toDo/toDo";
+import ToDo1 from "./components/toDo/toDo1";
 
 import { Route, BrowserRouter as Router } from "../node_modules/react-router-dom";
 
@@ -14,7 +15,7 @@ const myRouter = (
    
 
     <Route  exact path="/" component={App}/>
-    {/* <Route  path="/about" component={About}/> */}
+    <Route  path="/regular" component={ToDo1}/>
     <Route  path="/admin" component={ToDo}/>
 
   </Router>
