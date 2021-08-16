@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-const ToDoItem = ({ toDoItems }) => {
+const ToDoItem = ({ toDoItems, handleDeleteToDoItem }) => {
 
     const [toDoItem, setToDoItem] = useState(toDoItems)
     const [isModified, setIsModified] = useState(false)
@@ -38,6 +38,17 @@ const ToDoItem = ({ toDoItems }) => {
 
 
 
+    const delteToDoItem = ()=>{
+
+        fetch(`http://localhost:9999/api/v1/toDoItem/${toDoItem.id}`, {
+            method: 'DELETE',
+            headers: {
+                "content-type": "application/json"
+            }
+        })
+        .then((response) => handleDeleteToDoItem(toDoItem));
+
+    }
 
     return (
         <div>
@@ -62,7 +73,12 @@ const ToDoItem = ({ toDoItems }) => {
                             setToDoItem({...toDoItem, task : e.target.value})
                          } }/>
                     )
+
+                    
+
             }
+
+            <span style={{cursor: "pointer"}} onClick={delteToDoItem}>🚮</span>
             
         </div>
     )

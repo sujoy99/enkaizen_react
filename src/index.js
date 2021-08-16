@@ -4,12 +4,24 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import ToDo from "./components/toDo/toDo";
+
+import { Route, BrowserRouter as Router } from "../node_modules/react-router-dom";
+
+const myRouter = (
+
+  <Router>
+   
+
+    <Route  exact path="/" component={App}/>
+    {/* <Route  path="/about" component={About}/> */}
+    <Route  path="/admin" component={ToDo}/>
+
+  </Router>
+
+)
+
+ReactDOM.render(myRouter , document.getElementById('root') );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
